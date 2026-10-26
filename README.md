@@ -13,12 +13,6 @@ A lightweight, two-stage SSH brute-force defense system written in pure Bash, op
 
 >  **Full Documentation:** For complete architectural details, configuration references, and advanced setup, see **[DOCUMENTATION.md](DOCUMENTATION.md)**.
 
-## Installation Steps
-  1. Copy script to `/usr/local/bin/` and secure it (`sudo chmod 700 /usr/local/bin/brute_force_detector.sh`).
-  2. Copy service file to `/etc/systemd/system/`.
-  3. Reload and enable: `sudo systemctl daemon-reload && sudo systemctl enable --now ssh-log-monitor.service`.
-
-
 ##  Quick Setup
 
 1. Copy the script to `/usr/local/bin/`, set ownership to root, and restrict permissions so only root can read and execute it:
@@ -26,3 +20,14 @@ A lightweight, two-stage SSH brute-force defense system written in pure Bash, op
    sudo cp brute_force_detector.sh /usr/local/bin/
    sudo chown root:root /usr/local/bin/brute_force_detector.sh
    sudo chmod 700 /usr/local/bin/brute_force_detector.sh
+   
+2. Copy the systemd service file and enable it:
+   ```bash
+   sudo cp ssh-log-monitor.service /etc/systemd/system/
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now ssh-log-monitor.service
+
+
+3. Check service status:
+   ```bash
+   sudo systemctl status ssh-log-monitor.service
