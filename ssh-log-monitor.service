@@ -1,0 +1,13 @@
+[Unit]
+Description=SSH Brute Force Detector Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/local/bin/brute_force_detector.sh
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
