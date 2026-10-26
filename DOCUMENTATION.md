@@ -180,7 +180,7 @@ sudo systemctl daemon-reload
 
 4. Start and enable the service:
 ```
-   sudo systemctl enable --now ssh-log-monitor.service
+sudo systemctl enable --now ssh-log-monitor.service
 ```
 
 
